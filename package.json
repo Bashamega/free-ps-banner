@@ -1,6 +1,6 @@
 {
   "name": "free-ps-banner",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A JavaScript library that makes it easy to a free Palestine banner in your react web app",
   "main": "src/index.js",
   "scripts": {
