@@ -1,21 +1,32 @@
-# Exclude source files
-src
+# Ignore node_modules folder
+node_modules/
 
-# Exclude test files
-tests
-*.test.js
-*.spec.js
+# Ignore source files and directories
+src/
+scripts/
+*.ts
+*.tsx
 
-# Exclude build artifacts
-build
-dist
-
-# Exclude configuration files
-.gitignore
-.npmignore
-.eslintrc.js
-tsconfig.json
-
-# Exclude other unnecessary files
+# Ignore development and build files
+build/
 *.log
-*.md
+*.tmp
+*.env
+
+dev
+
+# Ignore test files and directories
+__tests__/
+*.test.js
+*.test.ts
+*.spec.js
+*.spec.ts
+
+# Ignore editor and IDE config
+.vscode/
+.idea/
+
+# Ignore documentation files
+README.md
+CHANGELOG.md
+LICENSE
