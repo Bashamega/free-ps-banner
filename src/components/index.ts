@@ -1,2 +1,2 @@
 const banner = require('./Banner');
-module.exports = { banner: banner };
+module.exports = banner;
