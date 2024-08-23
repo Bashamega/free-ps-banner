@@ -6,7 +6,7 @@
     "rollup": "rollup -c",
     "test": "jest"
   },
-  "author": "",
+  "author": "Adam Basha",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.25.2",
