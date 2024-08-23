@@ -2,9 +2,8 @@
   "name": "free-ps-banner",
   "version": "0.0.1",
   "description": "A JavaScript library that makes it easy to a free Palestine banner in your react web app",
-  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "rollup": "rollup -c"
   },
   "author": "",
   "license": "ISC",
@@ -17,5 +16,11 @@
     "rollup": "^4.21.0",
     "rollup-plugin-dts": "^6.1.1",
     "typescript": "^5.5.4"
-  }
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts"
 }
