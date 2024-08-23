@@ -1,0 +1,21 @@
+# Exclude source files
+src
+
+# Exclude test files
+tests
+*.test.js
+*.spec.js
+
+# Exclude build artifacts
+build
+dist
+
+# Exclude configuration files
+.gitignore
+.npmignore
+.eslintrc.js
+tsconfig.json
+
+# Exclude other unnecessary files
+*.log
+*.md
