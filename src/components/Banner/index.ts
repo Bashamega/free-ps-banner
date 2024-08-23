@@ -1,1 +1,1 @@
-export { default } from "./Banner";
+module.exports = require("./Banner");

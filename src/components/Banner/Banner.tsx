@@ -1,11 +1,6 @@
-import React from "react";
+const React = require("react");
 
-interface BannerProps {
-  title?: string;
-  subTitle?: string;
-}
-
-const Banner = ({ title, subTitle } :BannerProps) => {
+const Banner = ({ title = "Default Title", subTitle = "Default Subtitle" }) => {
   return (
     <div className="banner">
       <h1>{title}</h1>
@@ -15,4 +10,4 @@ const Banner = ({ title, subTitle } :BannerProps) => {
   );
 };
 
-export default Banner
+module.exports = Banner;
