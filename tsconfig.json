@@ -1,22 +1,15 @@
 {
   "compilerOptions": {
-    // Default
-    "target": "es5", 
-    "esModuleInterop": true, 
-    "forceConsistentCasingInFileNames": true,
-    "strict": true, 
-    "skipLibCheck": true,
-
-    // Added
-    "jsx": "react", 
-    "module": "CommonJS",  
+    "target": "es5",
+    "module": "esnext", // Ensure this is compatible with Rollup
+    "jsx": "react",
     "declaration": true,
-    "declarationDir": "types",
-    "sourceMap": true,
+    "declarationDir": "dist/types",
     "outDir": "dist",
+    "sourceMap": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "emitDeclarationOnly": true,
+    "esModuleInterop": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]

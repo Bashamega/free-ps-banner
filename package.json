@@ -36,7 +36,7 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "tslib": "^2.6.3"
   }

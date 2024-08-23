@@ -1,7 +1,11 @@
 module.exports = {
-    presets: [
+  presets: [
+    [
       '@babel/preset-env',
-      '@babel/preset-react',
+      {
+        modules: false, // Prevent Babel from converting ES modules to CommonJS
+      },
     ],
-  };
-  
+    '@babel/preset-react',
+  ],
+};

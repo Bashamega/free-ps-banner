@@ -10,4 +10,4 @@ const Banner = ({ title = "Default Title", subTitle = "Default Subtitle" }) => {
   );
 };
 
-module.exports = Banner;
+export default Banner;
