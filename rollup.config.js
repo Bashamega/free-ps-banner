@@ -6,7 +6,7 @@ const packageJson = require("./package.json");
 
 module.exports = [
   {
-    input: "src/index.ts",
+    input: "src/index.tsx",
     output: [
       {
         file: packageJson.main,
