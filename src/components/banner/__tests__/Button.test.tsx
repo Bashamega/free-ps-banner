@@ -1,36 +1,58 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import { Button } from '../index';
+import '@testing-library/jest-dom/extend-expect';
+import Banner from '../Banner';
 
-describe('Button', () => {
-	test('Should render Button correctly', () => {
-		render(<Button>Submit</Button>);
-		expect(screen.getByRole('button')).toBeInTheDocument();
-		expect(screen.getByRole('button')).toHaveTextContent('Submit');
-	});
+describe('Banner Component', () => {
+  test('renders with default title', () => {
+    render(<Banner />);
+    expect(screen.getByText('We do not support Genocide - Free Palestine 🇵🇸')).toBeInTheDocument();
+  });
 
-	test('Should be clickable', async () => {
-		const user = userEvent.setup();
-		const handleClick = jest.fn();
-		render(<Button onClick={handleClick}>Click me</Button>);
-		const button = screen.getByRole('button');
-		await user.click(button);
-		expect(handleClick).toHaveBeenCalled();
-	});
+  test('renders with custom title', () => {
+    const customTitle = 'Custom Title';
+    render(<Banner title={customTitle} />);
+    expect(screen.getByText(customTitle)).toBeInTheDocument();
+  });
 
-	test('Should not be clickable when disabled', () => {
-		const handleClick = jest.fn();
-		render(
-			<Button onClick={handleClick} disabled>
-				Click me
-			</Button>,
-		);
-		userEvent.click(screen.getByRole('button'));
-		expect(handleClick).not.toHaveBeenCalled();
-	});
+  test('renders button by default', () => {
+    render(<Banner />);
+    expect(screen.getByRole('link', { name: /DONATE/i })).toBeInTheDocument();
+  });
 
-	test('Should pass aria-pressed to the inner button', () => {
-		render(<Button aria-pressed="true">Action</Button>);
-		expect(screen.getByRole('button', { pressed: true })).toBeInTheDocument();
-	});
+  test('does not render button when showButton is false', () => {
+    render(<Banner showButton={false} />);
+    expect(screen.queryByRole('link')).not.toBeInTheDocument();
+  });
+
+  test('renders custom button text', () => {
+    const customButtonText = 'Custom Button Text';
+    render(<Banner customButtonText={customButtonText} />);
+    expect(screen.getByRole('link', { name: customButtonText })).toBeInTheDocument();
+  });
+
+  test('renders custom button link', () => {
+    const customButtonLink = 'https://example.com';
+    render(<Banner customButtonLink={customButtonLink} />);
+    expect(screen.getByRole('link')).toHaveAttribute('href', customButtonLink);
+  });
+
+  test('applies custom button className', () => {
+    const customButtonClassName = 'custom-button-class';
+    render(<Banner customButtonClassName={customButtonClassName} />);
+    expect(screen.getByRole('link')).toHaveClass(customButtonClassName);
+  });
+
+  test('applies custom container className', () => {
+    const customClassName = 'custom-container-class';
+    render(<Banner customClassName={customClassName} />);
+    expect(screen.getByRole('banner')).toHaveClass(customClassName);
+  });
+
+  test('renders default button link if customButtonLink is not provided', () => {
+    render(<Banner />);
+    expect(screen.getByRole('link')).toHaveAttribute(
+      'href',
+      'https://www.palestinercs.org/ar/Donation'
+    );
+  });
 });
