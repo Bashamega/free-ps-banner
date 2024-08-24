@@ -33,26 +33,26 @@ To use the `Banner` component in your React project:
 1. **Import the Component:**
 
    ```tsx
-   import React from 'react';
    import Banner from 'banner-component';
+   import React from 'react';
    ```
 
 2. **Add the Component to Your JSX:**
 
    ```tsx
    function App() {
-     return (
-       <div className="App">
-         <Banner
-           title="Support Human Rights"
-           showButton={true}
-           customButtonText="Contribute Now"
-           customButtonLink="https://example.com/donate"
-           customButtonClassName="my-button-class"
-           customClassName="my-banner-class"
-         />
-       </div>
-     );
+   	return (
+   		<div className="App">
+   			<Banner
+   				title="Support Human Rights"
+   				showButton={true}
+   				customButtonText="Contribute Now"
+   				customButtonLink="https://example.com/donate"
+   				customButtonClassName="my-button-class"
+   				customClassName="my-banner-class"
+   			/>
+   		</div>
+   	);
    }
 
    export default App;
