@@ -1,3 +1,5 @@
+import React from "react";
+
 interface Props {
   title?: string;
   showButton?: boolean;
@@ -6,7 +8,20 @@ interface Props {
   customButtonClassName?: string;
   customClassName?: string;
 }
-const styles = {
+
+const styles: {
+  container: React.CSSProperties;
+  clipPathStyle1: React.CSSProperties;
+  clipPathStyle2: React.CSSProperties;
+  textContainer: React.CSSProperties;
+  text: React.CSSProperties;
+  strong: React.CSSProperties;
+  svg: React.CSSProperties;
+  link: React.CSSProperties;
+  linkHover: React.CSSProperties;
+  linkFocusVisible: React.CSSProperties;
+  flexEnd: React.CSSProperties;
+} = {
   container: {
     position: "relative",
     display: "flex",
@@ -15,8 +30,7 @@ const styles = {
     overflow: "hidden",
     backgroundColor: "#f9fafb",
     padding: "0.625rem 1.5rem",
-    smPadding: "0.875rem",
-    fontFamily: "arial",
+    fontFamily: "Arial, sans-serif",
   },
   clipPathStyle1: {
     position: "absolute",
@@ -93,7 +107,7 @@ const styles = {
 
 function Banner(props: Props) {
   return (
-    <div style={styles.container} className={props.customClassName}>
+    <div style={styles.container} className={props.customClassName} role="banner">
       <div style={styles.textContainer}>
         <h1 style={styles.text}>
           {props?.title
@@ -109,7 +123,7 @@ function Banner(props: Props) {
                 ? props.customButtonLink
                 : "https://www.palestinercs.org/ar/Donation"
             }
-            style={{ ...styles.link }}
+            style={styles.link}
             className={props.customButtonClassName}
           >
             {props?.customButtonText ? (
