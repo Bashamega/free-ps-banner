@@ -2,10 +2,11 @@
   "name": "react-ui-boilerplate",
   "version": "0.0.0",
   "private": true,
-  "description": "",
+  "description": "A JavaScript library that makes it easy to a free Palestine banner in your react web app",
+  "author": "Adam Basha",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/Bashamega/free-ps-banner"
   },
   "sideEffects": false,
   "exports": {
@@ -19,7 +20,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "NODE_ENV=production rollup -c",
+    "build": "rollup -c",
     "build:storybook": "build-storybook",
     "changeset": "changeset",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
