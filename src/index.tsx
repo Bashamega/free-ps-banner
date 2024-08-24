@@ -1,6 +1,11 @@
-const React = require("react");
+import React from 'react';
 
-const Banner = ({ title = "Default Title", subTitle = "Default Subtitle" }) => {
+interface BannerProps {
+  title?: string;
+  subTitle?: string;
+}
+
+const Banner: React.FC<BannerProps> = ({ title = "Default Title", subTitle = "Default Subtitle" }) => {
   return (
     <div className="banner">
       <h1>{title}</h1>
@@ -10,4 +15,4 @@ const Banner = ({ title = "Default Title", subTitle = "Default Subtitle" }) => {
   );
 };
 
-export default Banner;
+export default Banner; // Default export
