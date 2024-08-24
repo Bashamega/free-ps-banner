@@ -26,9 +26,9 @@
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "prepare": "husky install",
     "release": "changeset publish",
-    "test": "NODE_ENV=test jest",
-    "test:coverage": "NODE_ENV=test jest --coverage",
-    "test:watch": "NODE_ENV=test jest --watch"
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
