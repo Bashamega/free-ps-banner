@@ -21,14 +21,9 @@
 	],
 	"scripts": {
 		"build": "rollup -c",
-		"build:storybook": "build-storybook",
 		"changeset": "changeset",
 		"lint": "eslint . --ext .ts,.tsx,.js,.jsx",
-		"prepare": "husky install",
-		"release": "changeset publish",
-		"test": "jest",
-		"test:coverage": "jest --coverage",
-		"test:watch": "jest --watch"
+		"test": "jest"
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx}": [
